@@ -47,7 +47,7 @@ export const runMigration = (
       await end()
 
       return migration
-    } catch (err) {
+    } catch (err: any) {
       try {
         await cleanup()
       } catch {
