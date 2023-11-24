@@ -151,9 +151,9 @@ function runMigrations(intendedMigrations: Array<Migration>, log: Logger, option
 
       return completedMigrations
     } catch (e: any) {
-      const error: MigrationError = new Error(
+      const error = new Error(
         `Migration failed. Reason: ${e.message}`,
-      )
+      ) as MigrationError
       error.cause = e.message
       throw error
     }
